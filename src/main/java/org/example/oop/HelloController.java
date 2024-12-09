@@ -79,6 +79,7 @@ public class HelloController implements Initializable {
             if (result.next()) {
                 System.out.println("Login Success");
                 getData.user = username.getText();
+
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Đăng nhập thành công");
                 alert.setHeaderText(null);

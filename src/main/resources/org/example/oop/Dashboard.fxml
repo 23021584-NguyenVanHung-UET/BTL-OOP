@@ -111,7 +111,7 @@
                                 <Button fx:id="issueBooks_btn" layoutX="29.0" layoutY="289.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="30.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@dashboard.css" text="Issue Books" />
                                 <Button fx:id="returnBooks_btn" layoutX="29.0" layoutY="329.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="30.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@dashboard.css" text="Return Books" />
                                 <Button fx:id="savedBooks_btn" layoutX="29.0" layoutY="369.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="30.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@dashboard.css" text="Saved Books" />
-                                <Button fx:id="edit_btn" layoutX="49.0" layoutY="25.0" mnemonicParsing="false" prefHeight="119.0" prefWidth="126.0" styleClass="edit-btn" stylesheets="@dashboard.css">
+                                <Button fx:id="edit_btn" layoutX="49.0" layoutY="25.0" mnemonicParsing="false" onAction="#insertImage" prefHeight="119.0" prefWidth="126.0" styleClass="edit-btn" stylesheets="@dashboard.css">
                                     <graphic>
                                         <FontAwesomeIcon fx:id="edit_icon" fill="WHITE" glyphName="EDIT" size="2em" />
                                     </graphic>
@@ -307,7 +307,7 @@
                             <children>
                                 <AnchorPane layoutX="14.0" layoutY="14.0" onMouseClicked="#selectSaveBooks" prefHeight="242.0" prefWidth="735.0" styleClass="card-form" stylesheets="@dashboard.css">
                                     <children>
-                                        <TableView fx:id="save_tableView" layoutX="234.0" layoutY="21.0" prefHeight="200.0" prefWidth="487.0">
+                                        <TableView fx:id="save_tableView" layoutX="234.0" layoutY="21.0" onMouseClicked="#selectSaveBooks" prefHeight="200.0" prefWidth="487.0">
                                             <columns>
                                                 <TableColumn fx:id="col_saveTitle" prefWidth="138.0" text="Book Title" />
                                                 <TableColumn fx:id="col_saveAuthor" prefWidth="115.0" text="Author" />

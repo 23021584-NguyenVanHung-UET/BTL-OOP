@@ -16,11 +16,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -174,6 +177,7 @@ public class Dashboard implements Initializable {
     @Override
     public void initialize(java.net.URL url, java.util.ResourceBundle rb) {
         showAvailableBoooks();
+        //showProfile();
         username();
         gender();
         showSaveBooks();
@@ -700,7 +704,6 @@ public class Dashboard implements Initializable {
         connect = Database.connectDB();
         try {
             saveBook sBook;
-
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
@@ -807,4 +810,42 @@ public class Dashboard implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void insertImage() {
+        FileChooser open = new FileChooser();
+        open.setTitle("Image File");
+        open.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image File", "*png", "*jpg"));
+        Stage stage = (Stage)nav_form.getScene().getWindow();
+        File file = open.showOpenDialog(stage);
+
+        if(file != null) {
+            image = new Image(file.toURI().toString(), 112, 84, false, true);
+            circle_image.setFill(new ImagePattern(image));
+            smallCircle_image.setFill(new ImagePattern(image));
+            getData.path = file.getAbsolutePath();
+            //changProfile();
+        }
+    }
+
+    /*public void changProfile() {
+        String url = getData.path;
+        url.replace("\\", "\\\\");
+        String sql = "UPDATE student SET image = '+" + url + "' WHERE user = '" + getData.user + "'";
+        connect = Database.connectDB();
+        try {
+            statement = connect.createStatement();
+            statement.executeUpdate(url);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void showProfile() {
+        String url ="file:" + getData.path;
+
+        image = new Image(url, 112, 84, false, true);
+        circle_image.setFill(new ImagePattern(image));
+        smallCircle_image.setFill(new ImagePattern(image));
+
+    }*/
 }
