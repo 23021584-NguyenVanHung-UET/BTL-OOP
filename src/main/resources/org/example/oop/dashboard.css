@@ -163,3 +163,13 @@
 .unsave-btn:hover{
     -fx-background-color:#c54d5d;
 }
+.clear-btn {
+    -fx-background-color: #376282;
+    -fx-background-radius: 15px;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.clear-btn:hover {
+    -fx-background-color: #7fd638;
+}

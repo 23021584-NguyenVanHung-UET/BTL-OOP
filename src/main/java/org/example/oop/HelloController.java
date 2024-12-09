@@ -36,6 +36,10 @@ public class HelloController implements Initializable {
 
     @FXML
     private Label welcomeText;
+    private Connection connect;
+    private PreparedStatement prepare;
+    private Statement statement;
+    private ResultSet result;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -58,14 +62,12 @@ public class HelloController implements Initializable {
         Stage stage = (Stage) close.getScene().getWindow();
         stage.close();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
-    private Connection connect;
-    private PreparedStatement prepare;
-    private Statement statement;
-    private ResultSet result;
+
     public void login() {
         String sql = "SELECT * FROM student WHERE User = ? AND Password = ?";
         connect = Database.connectDB();
@@ -76,7 +78,7 @@ public class HelloController implements Initializable {
             result = prepare.executeQuery();
             if (result.next()) {
                 System.out.println("Login Success");
-                getData.username = username.getText();
+                getData.user = username.getText();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Đăng nhập thành công");
                 alert.setHeaderText(null);

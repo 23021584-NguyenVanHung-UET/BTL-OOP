@@ -2,14 +2,14 @@ package org.example.oop;
 
 import java.util.Date;
 
-public class AvailableBooks {
+public class returnBook {
     private final String title;
     private final String author;
     private final String genre;
-    private final String image;
     private final Date date;
+    private final String image;
 
-    public AvailableBooks(String title, String author, String genre, String image, Date date) {
+    public returnBook(String title, String author, String genre, String image, Date date) {
         this.title = title;
         this.author = author;
         this.genre = genre;
