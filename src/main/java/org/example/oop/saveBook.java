@@ -9,7 +9,7 @@ public class saveBook {
     private final Date date;
     private final String image;
 
-    public saveBook(String title, String author, String genre, String image, Date date){
+    public saveBook(String title, String author, String genre, String image, Date date) {
 
         this.title = title;
         this.author = author;
@@ -19,19 +19,23 @@ public class saveBook {
 
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
-    public String getAuthor(){
+
+    public String getAuthor() {
         return author;
     }
-    public String getGenre(){
+
+    public String getGenre() {
         return genre;
     }
-    public Date getDate(){
+
+    public Date getDate() {
         return date;
     }
-    public String getImage(){
+
+    public String getImage() {
         return image;
     }
 }

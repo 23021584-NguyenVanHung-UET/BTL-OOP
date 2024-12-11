@@ -173,7 +173,7 @@
                                 <Separator layoutX="252.0" layoutY="30.0" orientation="VERTICAL" prefHeight="439.0" prefWidth="2.0" />
                             </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="issue_form" layoutX="29.0" layoutY="134.0" prefHeight="498.0" prefWidth="762.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="issue_form" layoutX="29.0" layoutY="134.0" prefHeight="498.0" prefWidth="762.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
                                 <AnchorPane layoutX="262.0" layoutY="13.0" prefHeight="473.0" prefWidth="486.0" styleClass="card-form" stylesheets="@dashboard.css">
                                     <children>
@@ -260,7 +260,7 @@
                                                 <Label fx:id="take_dateLabel" layoutX="109.0" layoutY="90.0" prefHeight="17.0" prefWidth="87.0" text="Label" />
                                             </children>
                                         </AnchorPane>
-                                        <Button fx:id="take_clearBtn" layoutX="14.0" layoutY="374.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="84.0" styleClass="clear-btn" stylesheets="@dashboard.css" text="Clear" />
+                                        <Button fx:id="take_clearBtn" layoutX="14.0" layoutY="374.0" mnemonicParsing="false" onAction="#clearTakeData" prefHeight="42.0" prefWidth="84.0" styleClass="clear-btn" stylesheets="@dashboard.css" text="Clear" />
                                         <Button fx:id="take_takeBtn" layoutX="134.0" layoutY="374.0" mnemonicParsing="false" onAction="#takeBook" prefHeight="42.0" prefWidth="84.0" styleClass="take-btn" stylesheets="@dashboard.css" text="Take" />
                                     </children>
                                 </AnchorPane>

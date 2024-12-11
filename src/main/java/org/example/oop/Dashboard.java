@@ -29,6 +29,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -177,16 +178,40 @@ public class Dashboard implements Initializable {
     @Override
     public void initialize(java.net.URL url, java.util.ResourceBundle rb) {
         showAvailableBoooks();
+        displayDate();
+        studentNumberLabel();
         //showProfile();
         username();
         gender();
         showSaveBooks();
+
 
         try {
             showBookReturn();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void displayDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String date = formatter.format(new Date());
+        take_IssuedDate.setText(date);
+    }
+
+    public void studentNumberLabel() {
+        take_StudentNumber.setText(getData.user);
+    }
+
+    public void clearTakeData() {
+        take_titleLabel.setText("");
+        take_authorLabel.setText("");
+        take_imageView.setImage(null);
+        take_BookTitle.setText("");
+        take_genreLabel.setText("");
+        take_dateLabel.setText("");
+        take_FirstName.setText("");
+        take_LastName.setText("");
     }
 
     public void logout(ActionEvent event) {
@@ -815,10 +840,10 @@ public class Dashboard implements Initializable {
         FileChooser open = new FileChooser();
         open.setTitle("Image File");
         open.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image File", "*png", "*jpg"));
-        Stage stage = (Stage)nav_form.getScene().getWindow();
+        Stage stage = (Stage) nav_form.getScene().getWindow();
         File file = open.showOpenDialog(stage);
 
-        if(file != null) {
+        if (file != null) {
             image = new Image(file.toURI().toString(), 112, 84, false, true);
             circle_image.setFill(new ImagePattern(image));
             smallCircle_image.setFill(new ImagePattern(image));
